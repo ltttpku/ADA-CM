@@ -1,4 +1,4 @@
-# Efficient and Transferable Adapter for Human Object Interaction Detection 
+# [ICCV 2023] Efficient Adaptive Human-Object Interaction Detection with Concept-guided Memory
 
 ## Dataset 
 Follow the process of [UPT](https://github.com/fredzzhang/upt).
