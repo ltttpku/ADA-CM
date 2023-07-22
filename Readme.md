@@ -102,3 +102,6 @@ python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --
 ```
 python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --partitions trainval test --pretrained checkpoints/detr-r50-vcoco.pth --output-dir checkpoints/vcoco-injector-r50 --use_insadapter --num_classes 24 --use_multi_hot --file1 vcoco_pkl_files/vcoco_union_embeddings_cachemodel_crop_padding_zeros_vit16.p  --clip_dir_vit checkpoints/pretrained_clip/ViT-B-16.pt --cache --resume CKPT_PATH
 ```
+
+## Acknowledgement
+We gratefully thank the authors from [UPT](https://github.com/fredzzhang/upt) for open-sourcing their code.
