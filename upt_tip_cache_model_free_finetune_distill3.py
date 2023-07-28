@@ -766,14 +766,6 @@ class UPT(nn.Module):
         intersection = tmp_mask1.logical_and(tmp_mask2)
         return intersection
 
-    @torch.no_grad()
-    def init_adapter_union_weight(self, device):
-        assert self.dataset == 'swig'
-        prompts = self.clip_head.prompt_learner()
-        tokenized_prompts = self.clip_head.tokenized_prompts
-        self.adapter_union_weight = self.clip_head.text_encoder(prompts, tokenized_prompts)
-        self.adapter_union_weight = self.adapter_union_weight.to(device)
-
     def compute_roi_embeddings(self, features: OrderedDict, image_size: Tensor, region_props: List[dict]):
         device = features.device
         boxes_h_collated = []; boxes_o_collated = []

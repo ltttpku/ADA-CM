@@ -335,12 +335,8 @@ def main(rank, args):
     if args.eval:
         device = torch.device(args.device)
         upt.eval()
-        upt.init_adapter_union_weight(device)
         if args.dataset == 'vcoco':
             raise NotImplementedError(f"Evaluation on V-COCO has not been implemented.")
-        if args.dataset == 'swig':
-            test_stats, evaluator = evaluate(upt, test_loader, device, args)
-            return
         ap = engine.test_hico(test_loader, args)
         print(ap.shape)
         # for _ap in ap:
