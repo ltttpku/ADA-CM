@@ -338,13 +338,6 @@ def main(rank, args):
         if args.dataset == 'vcoco':
             raise NotImplementedError(f"Evaluation on V-COCO has not been implemented.")
         ap = engine.test_hico(test_loader, args)
-        print(ap.shape)
-        # for _ap in ap:
-        #     print(_ap)
-        if args.dataset == "swig":
-            summarize_swig(swig_ap=ap)
-            pdb.set_trace()
-            return
         # Fetch indices for rare and non-rare classes
         num_anno = torch.as_tensor(trainset.dataset.anno_interaction)
         rare = torch.nonzero(num_anno < 10).squeeze(1)
@@ -372,7 +365,6 @@ def main(rank, args):
                 f"seen: {ap_seen*100:.2f}",
             )
             
-        print(args.resume) ## import pickle; pickle.dump({'ap': all_ap_verb, 'zs_flag': all_zs_flag_verb, 'feat': all_feat_verb}, open('analysis/zs_unseen_verb.p', 'wb'))
         return
 
     for p in upt.detector.parameters():

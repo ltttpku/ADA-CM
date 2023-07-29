@@ -92,6 +92,11 @@ python main_tip_finetune.py --world-size 1 --pretrained checkpoints/detr-r50-hic
 python main_tip_finetune.py --world-size 1 --pretrained checkpoints/detr-r50-hicodet.pth --output-dir checkpoints/hico --use_insadapter --num_classes 117 --use_multi_hot --file1 hicodet_pkl_files/union_embeddings_cachemodel_crop_padding_zeros_vitb16.p --clip_dir_vit checkpoints/pretrained_clip/ViT-B-16.pt --eval --resume CKPT_PATH
 ```
 
+|  Backbone  | mAP | Rare | Non-rare | Weights |
+|  ----  | ----  | ----  | ----  | ----  |
+| ResNet-50+ViT-B  | 33.80 | 31.72 | 34.42 | [weights](https://drive.google.com/file/d/1utTPqQkDIvlNhDzAs8mhoSN7FMQjBToH/view?usp=sharing) |
+| ResNet-50+ViT-L  | 38.40 | 37.52 | 38.66 | [weights](https://drive.google.com/file/d/1JqX61ZSDXmDuLz4DPavK3aa1ISG7W8Dj/view?usp=sharing) |
+
 ### V-COCO
 #### Training on V-COCO
 ```
@@ -102,6 +107,11 @@ python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --
 ```
 python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --partitions trainval test --pretrained checkpoints/detr-r50-vcoco.pth --output-dir checkpoints/vcoco-injector-r50 --use_insadapter --num_classes 24 --use_multi_hot --file1 vcoco_pkl_files/vcoco_union_embeddings_cachemodel_crop_padding_zeros_vit16.p  --clip_dir_vit checkpoints/pretrained_clip/ViT-B-16.pt --cache --resume CKPT_PATH
 ```
+
+|  Backbone  | Scenario 1 | Scenario 2 | Weights |
+|  ----  | ----  | ----  | ----  |
+| ResNet-50+ViT-B  | 56.12 | 61.45 | [weights](https://drive.google.com/file/d/13WiXzP08MKSMD-jZrtIpWcyFa7zYXnRE/view?usp=sharing) |
+| ResNet-50+ViT-L  | 58.57 | 63.97 | [weights](https://drive.google.com/file/d/1amqgWOPjC8mlHMrmoZj6YzxCFBPLUeww/view?usp=sharing) |
 
 ## Acknowledgement
 We gratefully thank the authors from [UPT](https://github.com/fredzzhang/upt) for open-sourcing their code.
