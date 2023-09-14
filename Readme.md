@@ -53,16 +53,20 @@ cd CLIP && python setup.py develop && cd ..
 ```
 
 ## Pre-extracted Features
-Download the pre-extracted features from [HERE](https://drive.google.com/file/d/1lUnUQD3XcWyQdwDHMi74oXBcivibGIWN/view?usp=sharing). The downloaded files have to be placed as follows.
+Download the pre-extracted features from [HERE](https://drive.google.com/file/d/1lUnUQD3XcWyQdwDHMi74oXBcivibGIWN/view?usp=sharing) and the pre-extracted bboxes from [HERE](https://drive.google.com/file/d/1xHGr36idtYSzMYGHKvvxMJyTiaq317Ev/view?usp=sharing). The downloaded files have to be placed as follows.
 
 ```
 |- ADA-CM
 |   |- hicodet_pkl_files
 |   |   |- union_embeddings_cachemodel_crop_padding_zeros_vitb16.p
 |   |   |- hicodet_union_embeddings_cachemodel_crop_padding_zeros_vit336.p
+|   |   |- hicodet_train_bbox_R50.p
+|   |   |- hicodet_test_bbox_R50.p
 |   |- vcoco_pkl_files
 |   |   |- vcoco_union_embeddings_cachemodel_crop_padding_zeros_vit16.p
 |   |   |- vcoco_union_embeddings_cachemodel_crop_padding_zeros_vit336.p
+|   |   |- vcoco_train_bbox_R50.p
+|   |   |- vcoco_test_bbox_R50.p
 :   :      
 ```
 
@@ -71,10 +75,11 @@ Download the pre-extracted features from [HERE](https://drive.google.com/file/d/
 ```
 python main_tip_ye.py --world-size 1 --pretrained checkpoints/detr-r50-hicodet.pth --output-dir checkpoints/test --eval --post_process --use_multi_hot --logits_type HO+U+T --num_shot 8 --file1 hicodet_pkl_files/union_embeddings_cachemodel_crop_padding_zeros_vitb16.p --clip_dir_vit checkpoints/pretrained_clip/ViT-B-16.pt
 ```
+
 ### V-COCO
 Cache detection results for evaluation on V-COCO:
 ```
-python main_tip_ye.py --world-size 1 --dataset vcoco --data-root vcoco/ --partitions trainval test --pretrained checkpoints/detr-r50-vcoco.pth --output-dir matlab/TF_vcoco/ --num-workers 4 --cache --post_process --dic_key verb --use_multi_hot --num_shot 8 --logits_type HO+U+T  --file1 vcoco_pkl_files/vcoco_union_embeddings_cachemodel_crop_padding_zeros_vit16_TF.p 
+python main_tip_ye.py --world-size 1 --dataset vcoco --data-root vcoco/ --partitions trainval test --pretrained checkpoints/detr-r50-vcoco.pth --output-dir matlab/TF_vcoco/ --num-workers 4 --cache --post_process --dic_key verb --use_multi_hot --num_shot 8 --logits_type HO+U+T --file1 vcoco_pkl_files/vcoco_union_embeddings_cachemodel_crop_padding_zeros_vit16.p
 ```
 
 For V-COCO, we did not implement evaluation utilities, and instead use the utilities provided by [Gupta et al.](https://github.com/ywchao/ho-rcnn). Refer to these [instructions](https://github.com/fredzzhang/upt/discussions/14) for more details.
