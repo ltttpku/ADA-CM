@@ -122,5 +122,18 @@ python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --
 |V-COCO| ResNet-50+ViT-B  | 56.12 | 61.45 | [weights](https://drive.google.com/file/d/13WiXzP08MKSMD-jZrtIpWcyFa7zYXnRE/view?usp=sharing) |
 |V-COCO| ResNet-50+ViT-L  | 58.57 | 63.97 | [weights](https://drive.google.com/file/d/1amqgWOPjC8mlHMrmoZj6YzxCFBPLUeww/view?usp=sharing) |
 
+## Citation
+If you find our paper and/or code helpful, please consider citing:
+```
+@article{ting2023hoi,
+ title={Efficient Adaptive Human-Object Interaction Detection with Concept-guided Memory},
+ author={Ting Lei and Fabian Caba and Qingchao Chen and Hailin Ji and Yuxin Peng and Yang Liu},
+ year={2023}
+ booktitle={ICCV}
+ organization={IEEE}
+}
+```
+
 ## Acknowledgement
 We gratefully thank the authors from [UPT](https://github.com/fredzzhang/upt) for open-sourcing their code.
+
