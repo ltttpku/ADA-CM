@@ -126,11 +126,11 @@ python main_tip_finetune.py --world-size 1 --dataset vcoco --data-root vcoco/ --
 If you find our paper and/or code helpful, please consider citing:
 ```
 @article{ting2023hoi,
- title={Efficient Adaptive Human-Object Interaction Detection with Concept-guided Memory},
- author={Ting Lei and Fabian Caba and Qingchao Chen and Hailin Ji and Yuxin Peng and Yang Liu},
- year={2023}
- booktitle={ICCV}
- organization={IEEE}
+  title={Efficient Adaptive Human-Object Interaction Detection with Concept-guided Memory},
+  author={Ting Lei and Fabian Caba and Qingchao Chen and Hailin Ji and Yuxin Peng and Yang Liu},
+  year={2023},
+  booktitle={ICCV},
+  organization={IEEE},
 }
 ```
 
