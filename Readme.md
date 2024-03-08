@@ -53,7 +53,7 @@ cd CLIP && python setup.py develop && cd ..
 ```
 
 ## Pre-extracted Features
-Download the pre-extracted features from [HERE](https://drive.google.com/file/d/1lUnUQD3XcWyQdwDHMi74oXBcivibGIWN/view?usp=sharing) and the pre-extracted bboxes from [HERE](https://drive.google.com/file/d/1xHGr36idtYSzMYGHKvvxMJyTiaq317Ev/view?usp=sharing). The downloaded files have to be placed as follows.
+Download the pre-extracted features from [HERE](https://drive.google.com/file/d/1lUnUQD3XcWyQdwDHMi74oXBcivibGIWN/view?usp=sharing) and the pre-extracted bboxes from [HERE](https://drive.google.com/file/d/19Mo1d4J6xX9jDNvDJHEWDpaiPKxQHQsT/view?usp=sharing). The downloaded files have to be placed as follows.
 
 ```
 |- ADA-CM
